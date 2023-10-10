@@ -1,6 +1,5 @@
 $(document).ready(function () {
   let jobListings = [];
-  // Fetch data.json using jQuery AJAX
   $.getJSON("./data.json", function (data) {
     jobListings = data;
     console.log(jobListings);
@@ -12,7 +11,7 @@ $(document).ready(function () {
     // Get all selected tags
     const selectedTags = $(".selected-tag")
       .map(function () {
-        return $(this).text().slice(0, -1); // Exclude the "x" button
+        return $(this).text().slice(0, -1);
       })
       .get();
 
@@ -161,16 +160,12 @@ $(document).ready(function () {
         .append(`<p class="tags">${tag.trim()}</p>`);
     });
 
-    // Prepend the new job listing to the top of the job listings
     $(".job-listing").first().before(newJobListing);
 
-    // Close the popup
     $("#popup-overlay").hide();
 
-    // Reset form fields
     $("#company-name, #position, #location").val("");
 
-    // Attach a click event handler to the "X" button of the new job listing
     newJobListing.on("click", ".delete-btn", function () {
       removeJobListing(newJobListing);
     });
