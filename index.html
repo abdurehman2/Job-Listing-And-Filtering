@@ -55,6 +55,12 @@
             <div class="position">
               <span class="role">Senior Frontend Developer</span>
             </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Photosnap.
+              </p>
+            </div>
             <div class="location">
               <ul class="jobs__details">
                 <li class="jobs__details-item">1d ago</li>
@@ -85,6 +91,12 @@
             </div>
             <div class="position">
               <span class="role">Fullstack Developer</span>
+            </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Manage.
+              </p>
             </div>
             <div class="location">
               <ul class="jobs__details">
@@ -119,6 +131,12 @@
             <div class="position">
               <span class="role">Junior Frontend Developer</span>
             </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Account.
+              </p>
+            </div>
             <div class="location">
               <ul class="jobs__details">
                 <li class="jobs__details-item">2d ago</li>
@@ -147,6 +165,12 @@
             </div>
             <div class="position">
               <span class="role">Junior Frontend Developer</span>
+            </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at MyHome.
+              </p>
             </div>
             <div class="location">
               <ul class="jobs__details">
@@ -180,6 +204,12 @@
             <div class="position">
               <span class="role">Software Engineer</span>
             </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Loop Studios.
+              </p>
+            </div>
             <div class="location">
               <ul class="jobs__details">
                 <li class="jobs__details-item">1w ago</li>
@@ -208,6 +238,12 @@
             </div>
             <div class="position">
               <span class="role">Junior Backend Developer</span>
+            </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at FaceIt.
+              </p>
             </div>
             <div class="location">
               <ul class="jobs__details">
@@ -241,6 +277,12 @@
             <div class="position">
               <span class="role">Junior Developer</span>
             </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Shortly.
+              </p>
+            </div>
             <div class="location">
               <ul class="jobs__details">
                 <li class="jobs__details-item">2w ago</li>
@@ -269,6 +311,12 @@
             </div>
             <div class="position">
               <span class="role">Junior Frontend Developer</span>
+            </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Insure.
+              </p>
             </div>
             <div class="location">
               <ul class="jobs__details">
@@ -303,6 +351,12 @@
             <div class="position">
               <span class="role">Full Stack Engineer</span>
             </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at Eyecam Co.
+              </p>
+            </div>
             <div class="location">
               <ul class="jobs__details">
                 <li class="jobs__details-item">3w ago</li>
@@ -336,6 +390,12 @@
             <div class="position">
               <span class="role">Front-end Developer</span>
             </div>
+            <div class="description" style="display: none">
+              <p>
+                This is the job description for the Senior Frontend Developer
+                position at The Air Filter Company.
+              </p>
+            </div>
             <div class="location">
               <ul class="jobs__details">
                 <li class="jobs__details-item">1m ago</li>
@@ -366,6 +426,14 @@
       <button class="add-job-btn">Add Job</button>
     </div>
 
+    <div id="popup-overlay" style="display: none">
+      <div class="popup-content">
+        <div id="popup-close-button" class="popup-close">X</div>
+        <h2>Job Details</h2>
+        <p id="job-details-description"></p>
+      </div>
+    </div>
+
     <div id="popup-form" style="display: none">
       <form id="job-form">
         <button type="button" id="close-btn">X</button>
@@ -377,6 +445,8 @@
         <input type="text" id="location" name="location" /><br />
         <label for="tags">Tags (separated by commas):</label><br />
         <input type="text" id="tags" name="tags" /><br />
+        <label for="description">Description:</label><br />
+        <textarea id="description" name="description" rows="4"></textarea><br />
         <button class="submit-form">Submit</button>
       </form>
     </div>

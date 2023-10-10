@@ -39,16 +39,13 @@ $(document).ready(function () {
   }
 
   $(".filter").on("click", ".filter-btn", function () {
-    $(this).closest(".selected-tag").remove(); // Remove the associated filter tag
-    // Filter job listings based on selected tags
-
+    $(this).closest(".selected-tag").remove();
     filterJobListings();
   });
 
   $(".tags").on("click", function () {
-    const clickedTag = $(this).text(); // Get the text content of the clicked tag
+    const clickedTag = $(this).text();
 
-    // Check if the tag already exists in the "filter" div
     if (!$(".selected-tag:contains(" + clickedTag + ")").length) {
       const selectedTag = $(`
       <div class="filter-tags">
@@ -57,25 +54,51 @@ $(document).ready(function () {
         .text(clickedTag)
         .addClass("selected-tag tags");
 
-      $(".filter").append(selectedTag); // Append the selected tag to the "filter" div
+      $(".filter").append(selectedTag);
       const filterDelete = $(`<button class="filter-btn"></button>`)
         .text("x")
         .addClass("filter-btn");
       $(".selected-tag").append(filterDelete);
     }
 
-    filterJobListings(); // Filter job listings based on selected tags
+    filterJobListings();
   });
 
-  //Add a click event listener to the "Clear" button
   $(".clear-btn").on("click", function () {
-    $(".selected-tag").remove(); // Remove all selected tags from the "filter" div
+    $(".selected-tag").remove();
     $(".job-listing").show();
   });
 
-  // Function to handle the click event on the "Delete" button
-  $(".job-listing").on("click", ".delete-btn", function () {
-    $(this).closest(".job-listing").remove(); // Remove the parent .job-listing div
+  const openJobDetailsPopup = (description) => {
+    $("#popup-overlay").show();
+    $("#job-details-description").text(description);
+  };
+
+  $(".job-listing").on("click", function (event) {
+    if (
+      !$(event.target).hasClass("tags") &&
+      !$(event.target).hasClass("delete-btn")
+    ) {
+      const description = $(this).find(".description p").text();
+      openJobDetailsPopup(description);
+    }
+  });
+
+  $(".job-listing button, .job-listing .tags").on("click", function (event) {
+    event.stopPropagation();
+  });
+
+  // delete the job listing from array.
+  $(".job-listing button, .job-listing .delete-btn").on(
+    "click",
+    function (event) {
+      $(this).closest(".job-listing").remove();
+    }
+  );
+
+  // close the popup when clicking the close button
+  $("#popup-close-button").on("click", function () {
+    $("#popup-overlay").hide();
   });
 
   $(".add-job-btn").on("click", function () {
@@ -94,13 +117,12 @@ $(document).ready(function () {
   $("#job-form").submit(function (event) {
     event.preventDefault();
 
-    // Get form input values
     const companyName = $("#company-name").val();
     const role = $("#position").val();
     const location = $("#location").val();
     const tags = $("#tags").val().split(",");
+    const description = $("#description").val();
 
-    // Create a new job listing HTML element
     const newJobListing = $(`
     <div class="job-listing">
       <button class="delete-btn">X</button>
@@ -114,6 +136,11 @@ $(document).ready(function () {
           <div class="position">
             <span class="role">${role}</span>
           </div>
+          <div class="description" style="display: none">
+              <p>
+                ${description}
+              </p>
+            </div>
           <div class="location">
             <ul class="jobs__details">
               <!-- Replace with actual job details -->
@@ -146,6 +173,15 @@ $(document).ready(function () {
     // Attach a click event handler to the "X" button of the new job listing
     newJobListing.on("click", ".delete-btn", function () {
       removeJobListing(newJobListing);
+    });
+
+    newJobListing.on("click", function () {
+      const description = $(this).find(".description p").text();
+      openJobDetailsPopup(description);
+    });
+
+    newJobListing.on("click", function (event) {
+      $(this).closest(".job-listing").remove();
     });
   });
 });
