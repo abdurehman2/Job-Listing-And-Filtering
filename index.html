@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Frontend Mentor | Job Listings</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="images/bg-header-desktop.svg" alt="header-background" />
+    </nav>
+    <main>
+      <div class="filter-bar">
+        <div class="filter"></div>
+        <button class="clear-btn">Clear</button>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img
+            src="images/photosnap.svg"
+            alt="Photosnap-Logo"
+            class="company-img"
+          />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Photosnap</p>
+              <button class="new-btn">New!</button>
+              <button class="featured-btn">Featured</button>
+            </div>
+            <div class="position">
+              <span class="role">Senior Frontend Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">1d ago</li>
+                <li class="jobs__details-item">Full Time</li>
+                <li class="jobs__details-item">USA Only</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Frontend</p>
+          <p class="tags">Senior</p>
+          <p class="tags">HTML</p>
+          <p class="tags">CSS</p>
+          <p class="tags">JavaScript</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img src="images/manage.svg" alt="Manage-Logo" class="company-img" />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Manage</p>
+              <button class="new-btn">New!</button>
+              <button class="featured-btn">Featured</button>
+            </div>
+            <div class="position">
+              <span class="role">Fullstack Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">1d ago</li>
+                <li class="jobs__details-item">Part Time</li>
+                <li class="jobs__details-item">Remote</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Fullstack</p>
+          <p class="tags">Midweight</p>
+          <p class="tags">Python</p>
+          <p class="tags">React</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img
+            src="images/account.svg"
+            alt="Photosnap-Logo"
+            class="company-img"
+          />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Account</p>
+              <button class="new-btn">New!</button>
+            </div>
+            <div class="position">
+              <span class="role">Junior Frontend Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">2d ago</li>
+                <li class="jobs__details-item">Part Time</li>
+                <li class="jobs__details-item">USA only</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Frontend</p>
+          <p class="tags">Junior</p>
+          <p class="tags">JavaScript</p>
+          <p class="tags">React</p>
+          <p class="tags">Sass</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img src="images/myhome.svg" alt="MyHome-Logo" class="company-img" />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">MyHome</p>
+            </div>
+            <div class="position">
+              <span class="role">Junior Frontend Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">5d ago</li>
+                <li class="jobs__details-item">Contract</li>
+                <li class="jobs__details-item">USA only</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Frontend</p>
+          <p class="tags">Junior</p>
+          <p class="tags">CSS</p>
+          <p class="tags">JavaScript</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img
+            src="images/loop-studios.svg"
+            alt="Loop-Studios-Logo"
+            class="company-img"
+          />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Loop Studios</p>
+            </div>
+            <div class="position">
+              <span class="role">Software Engineer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">1w ago</li>
+                <li class="jobs__details-item">Full Time</li>
+                <li class="jobs__details-item">Worldwide</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Fullstack</p>
+          <p class="tags">Midweight</p>
+          <p class="tags">JavaScript</p>
+          <p class="tags">Ruby</p>
+          <p class="tags">Sass</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img src="images/faceit.svg" alt="FaceIt-Logo" class="company-img" />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">FaceIt</p>
+            </div>
+            <div class="position">
+              <span class="role">Junior Backend Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">2d ago</li>
+                <li class="jobs__details-item">Full Time</li>
+                <li class="jobs__details-item">UK only</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Backend</p>
+          <p class="tags">Junior</p>
+          <p class="tags">Ruby</p>
+          <p class="tags">RoR</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img
+            src="images/shortly.svg"
+            alt="Shortly-Logo"
+            class="company-img"
+          />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Shortly</p>
+            </div>
+            <div class="position">
+              <span class="role">Junior Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">2w ago</li>
+                <li class="jobs__details-item">Full Time</li>
+                <li class="jobs__details-item">Worldwide</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Frontend</p>
+          <p class="tags">Junior</p>
+          <p class="tags">HTML</p>
+          <p class="tags">JavaScript</p>
+          <p class="tags">Sass</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img src="images/insure.svg" alt="Insure-Logo" class="company-img" />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Insure</p>
+            </div>
+            <div class="position">
+              <span class="role">Junior Frontend Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">2w ago</li>
+                <li class="jobs__details-item">Full Time</li>
+                <li class="jobs__details-item">USA only</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Frontend</p>
+          <p class="tags">Junior</p>
+          <p class="tags">JavaScript</p>
+          <p class="tags">Vue</p>
+          <p class="tags">Sass</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img
+            src="images/eyecam-co.svg"
+            alt="Eyecam-Co-Logo"
+            class="company-img"
+          />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">Eyecam Co.</p>
+            </div>
+            <div class="position">
+              <span class="role">Full Stack Engineer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">3w ago</li>
+                <li class="jobs__details-item">Full Time</li>
+                <li class="jobs__details-item">Worldwide</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Fullstack</p>
+          <p class="tags">Midweight</p>
+          <p class="tags">JavaScript</p>
+          <p class="tags">Python</p>
+          <p class="tags">Django</p>
+        </span>
+      </div>
+
+      <div class="job-listing">
+        <button class="delete-btn">X</button>
+        <span class="listing-information">
+          <img
+            src="images/the-air-filter-company.svg"
+            alt="The-Air-Filter-Company-Logo"
+            class="company-img"
+          />
+          <div class="job-info">
+            <div class="company-info">
+              <p class="company-name">The Air Filter Company</p>
+            </div>
+            <div class="position">
+              <span class="role">Front-end Developer</span>
+            </div>
+            <div class="location">
+              <ul class="jobs__details">
+                <li class="jobs__details-item">1m ago</li>
+                <li class="jobs__details-item">Part Time</li>
+                <li class="jobs__details-item">Worldwide</li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        <span class="tags-div">
+          <p class="tags">Frontend</p>
+          <p class="tags">Junior</p>
+          <p class="tags">JavaScript</p>
+          <p class="tags">React</p>
+          <p class="tags">Sass</p>
+        </span>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+
+    <div class="add-job-button">
+      <button class="add-job-btn">Add Job</button>
+    </div>
+
+    <div id="popup-form" style="display: none">
+      <form id="job-form">
+        <button type="button" id="close-btn">X</button>
+        <label for="company-name">Company Name:</label><br />
+        <input type="text" id="company-name" name="company-name" /><br />
+        <label for="role">Role:</label><br />
+        <input type="text" id="role" name="role" /><br />
+        <label for="location">Location:</label><br />
+        <input type="text" id="location" name="location" /><br />
+        <label for="tags">Tags (separated by commas):</label><br />
+        <input type="text" id="tags" name="tags" /><br />
+        <button class="submit-form">Submit</button>
+      </form>
+    </div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
