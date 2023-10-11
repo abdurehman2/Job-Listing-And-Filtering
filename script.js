@@ -131,6 +131,8 @@ $(document).ready(function () {
         <div class="job-info">
           <div class="company-info">
             <p class="company-name">${companyName}</p>
+            <button class="new-btn">New!</button>
+            <button class="featured-btn">Featured</button>
           </div>
           <div class="position">
             <span class="role">${role}</span>
@@ -166,16 +168,16 @@ $(document).ready(function () {
 
     $("#company-name, #position, #location").val("");
 
-    newJobListing.on("click", ".delete-btn", function () {
-      removeJobListing(newJobListing);
-    });
+    // newJobListing.on("click", ".delete-btn", function () {
+    //   removeJobListing(newJobListing);
+    // });
 
     newJobListing.on("click", function () {
       const description = $(this).find(".description p").text();
       openJobDetailsPopup(description);
     });
 
-    newJobListing.on("click", function (event) {
+    newJobListing.on("click", ".delete-btn", function (event) {
       $(this).closest(".job-listing").remove();
     });
   });
